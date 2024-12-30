@@ -31,6 +31,17 @@ class TreeCreate {
         return root;
 
     }
+    public void preOrder(Node root)
+    {
+        if(root!=null)
+        {
+            System.out.print(root.data +" ");
+            preOrder(root.left);
+            preOrder(root.right);
+        }
+        else return;
+    }
+
     public void inOrder(Node root)
     {
         if(root!=null)
@@ -41,6 +52,19 @@ class TreeCreate {
         }
         else return;
     }
+
+
+    public void postOrder(Node root)
+    {
+        if(root!=null)
+        {
+            postOrder(root.left);
+            postOrder(root.right);
+            System.out.print(root.data +" ");
+        }
+        else return;
+    }
+
 
 
 
