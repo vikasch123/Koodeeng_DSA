@@ -1,5 +1,7 @@
 package Trees;
 import java.util.*;
+
+
 class Node{
     int data;
     Node left,right;
@@ -53,6 +55,34 @@ class TreeCreate {
         else return;
     }
 
+    public void levelOrder(Node root) {
+        if (root == null)
+            return;
+
+        Queue<Node> queue = new LinkedList<Node>();
+        queue.add(root);
+
+
+        while (!queue.isEmpty()) {
+
+
+            Node currentNode = queue.poll();// Remove the front node
+            System.out.println();
+            System.out.print(currentNode.data + " ");
+
+
+            if (currentNode.left != null) {
+                queue.add(currentNode.left);
+            }
+            if (currentNode.right != null) {
+                queue.add(currentNode.right);
+            }
+
+
+
+        }
+    }
+
 
     public void postOrder(Node root)
     {
@@ -74,5 +104,6 @@ class TreeCreate {
         TreeCreate ob=new TreeCreate();
         Node root=ob.createTree();
         ob.inOrder(root);
+        ob.levelOrder(root);
     }
 }
