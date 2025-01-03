@@ -1,5 +1,6 @@
 package LinkedList;
-
+// this is the solution to the leetcode problem 
+// Reversing a Linked List
 public class Solution {
     public ListNode reverseList(ListNode head) {
     if(head==null)
